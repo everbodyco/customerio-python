@@ -1,16 +1,13 @@
 import base64
-from datetime import datetime
-from functools import partial
 import json
-import sys
 import unittest
+from functools import partial
+
+import requests
 
 from customerio import APIClient, SendEmailRequest, Regions, CustomerIOException
 from customerio.__version__ import __version__ as ClientVersion
 from tests.server import HTTPSTestCase
-
-import requests
-from requests.auth import _basic_auth_str
 
 # test uses a self signed certificate so disable the warning messages
 requests.packages.urllib3.disable_warnings()
